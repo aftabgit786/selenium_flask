@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Comments Scraper Results</title>
+    <style>
+        table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 50px;
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <h1>{{ video_title }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Thumbnail URL</th>
+                <th>Comment Time</th>
+                <th>Likes</th>
+                <th>Comment Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comment in comments_data %}
+            <tr>
+                <td>{{ comment[0] }}</td>
+                <td>{{ comment[1] }}</td>
+                <td>{{ comment[2] }}</td>
+                <td>{{ comment[3] }}</td>
+                <td>{{ comment[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
